@@ -19,7 +19,6 @@ import javax.swing.tree.DefaultTreeModel;
 public class Personas {
 
     private int edad;
-
     private long id;
     private String Nacionalidad;
     private String Lugar_nacimiento;
@@ -40,6 +39,10 @@ public class Personas {
         this.arbol_genealogico = arbol_genealogico;
         this.color_piel = color_piel;
         this.familiares = familiares;
+    }
+
+    Personas(Integer integer, long parseLong, String text, String text0, String text1, Color background) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public int getEdad() {
