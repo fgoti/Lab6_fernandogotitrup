@@ -1,6 +1,5 @@
 package Lab;
 
-
 import java.awt.Color;
 import java.util.ArrayList;
 import static javafx.scene.paint.Color.color;
@@ -41,8 +40,13 @@ public class Personas {
         this.familiares = familiares;
     }
 
-    Personas(Integer integer, long parseLong, String text, String text0, String text1, Color background) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    Personas(int edad, long id, String Nacionalidad, String Lugar_nacimiento, String Nombre, Color color_piel) {
+        this.edad = edad;
+        this.id = id;
+        this.Nacionalidad = Nacionalidad;
+        this.Lugar_nacimiento = Lugar_nacimiento;
+        this.Nombre = Nombre;
+        this.color_piel = color_piel;
     }
 
     public int getEdad() {
