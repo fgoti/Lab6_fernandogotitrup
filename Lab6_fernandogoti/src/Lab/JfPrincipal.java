@@ -12,9 +12,28 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import com.jgoodies.looks.plastic.Plastic3DLookAndFeel;
+import com.jgoodies.looks.plastic.theme.DarkStar;
+import java.awt.HeadlessException;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JTree;
 
 /**
  *
@@ -28,6 +47,71 @@ public class JfPrincipal extends javax.swing.JFrame {
     public JfPrincipal() {
         this.Datos = new ArrayList();
         initComponents();
+
+    }
+
+    public JfPrincipal(JDialog About, JMenuItem About_opcion, JTree Arbol_Familias, JButton ColorB, JComboBox<String> ComboPadres, JComboBox<String> ComboTrabajo, JComboBox<String> Combo_Estado, JComboBox<String> Combo_Jefe_trabajo, JComboBox<String> Combo_edad, JMenuItem GuardarComo_opcion, JButton GuardarPersona, JMenuItem Guardar_opcion, JMenuItem Salir_opcion, JTabbedPane TabFEJC, JTabbedPane TabPrincipal, JTextField TexClientes, JTextField TexDineroCliente, JTextField TexHora_Entrada, JTextField TexHora_Salida, JTextField TexIdentidad, JTextField TexNacionalidad, JTextField TexNombre, JTextField TexTicket, JTextField TextGanancias, JTextField TextLugar, JTextField Text_Sueldo, ButtonGroup buttonGroup1, JButton jButton1, JLabel jLabel1, JLabel jLabel10, JLabel jLabel11, JLabel jLabel12, JLabel jLabel2, JLabel jLabel27, JLabel jLabel28, JLabel jLabel29, JLabel jLabel3, JLabel jLabel30, JLabel jLabel31, JLabel jLabel32, JLabel jLabel4, JLabel jLabel5, JLabel jLabel6, JLabel jLabel7, JLabel jLabel8, JLabel jLabel9, JMenu jMenu1, JMenuBar jMenuBar1, JPanel jPanel1, JPanel jPanel2, JPanel jPanel3, JPanel jPanel4, JPanel jPanel5, JPanel jPanel6, JPanel jPanel7, JPanel jPanel8, JScrollPane jScrollPane1, JScrollPane jScrollPane2, JScrollPane jScrollPane3, JTextArea jTextArea1, JTree jTree1) throws HeadlessException {
+        this.About = About;
+        this.About_opcion = About_opcion;
+        this.Arbol_Familias = Arbol_Familias;
+        this.ColorB = ColorB;
+        this.ComboPadres = ComboPadres;
+        this.ComboTrabajo = ComboTrabajo;
+        this.Combo_Estado = Combo_Estado;
+        this.Combo_Jefe_trabajo = Combo_Jefe_trabajo;
+        this.Combo_edad = Combo_edad;
+        this.GuardarComo_opcion = GuardarComo_opcion;
+        this.GuardarPersona = GuardarPersona;
+        this.Guardar_opcion = Guardar_opcion;
+        this.Salir_opcion = Salir_opcion;
+        this.TabFEJC = TabFEJC;
+        this.TabPrincipal = TabPrincipal;
+        this.TexClientes = TexClientes;
+        this.TexDineroCliente = TexDineroCliente;
+        this.TexHora_Entrada = TexHora_Entrada;
+        this.TexHora_Salida = TexHora_Salida;
+        this.TexIdentidad = TexIdentidad;
+        this.TexNacionalidad = TexNacionalidad;
+        this.TexNombre = TexNombre;
+        this.TexTicket = TexTicket;
+        this.TextGanancias = TextGanancias;
+        this.TextLugar = TextLugar;
+        this.Text_Sueldo = Text_Sueldo;
+        this.buttonGroup1 = buttonGroup1;
+        this.jButton1 = jButton1;
+        this.jLabel1 = jLabel1;
+        this.jLabel10 = jLabel10;
+        this.jLabel11 = jLabel11;
+        this.jLabel12 = jLabel12;
+        this.jLabel2 = jLabel2;
+        this.jLabel27 = jLabel27;
+        this.jLabel28 = jLabel28;
+        this.jLabel29 = jLabel29;
+        this.jLabel3 = jLabel3;
+        this.jLabel30 = jLabel30;
+        this.jLabel31 = jLabel31;
+        this.jLabel32 = jLabel32;
+        this.jLabel4 = jLabel4;
+        this.jLabel5 = jLabel5;
+        this.jLabel6 = jLabel6;
+        this.jLabel7 = jLabel7;
+        this.jLabel8 = jLabel8;
+        this.jLabel9 = jLabel9;
+        this.jMenu1 = jMenu1;
+        this.jMenuBar1 = jMenuBar1;
+        this.jPanel1 = jPanel1;
+        this.jPanel2 = jPanel2;
+        this.jPanel3 = jPanel3;
+        this.jPanel4 = jPanel4;
+        this.jPanel5 = jPanel5;
+        this.jPanel6 = jPanel6;
+        this.jPanel7 = jPanel7;
+        this.jPanel8 = jPanel8;
+        this.jScrollPane1 = jScrollPane1;
+        this.jScrollPane2 = jScrollPane2;
+        this.jScrollPane3 = jScrollPane3;
+        this.jTextArea1 = jTextArea1;
+        this.jTree1 = jTree1;
     }
 
     /**
@@ -79,19 +163,19 @@ public class JfPrincipal extends javax.swing.JFrame {
         TexTicket = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         TexDineroCliente = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        GuardarPersona = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
         ColorB = new javax.swing.JButton();
         TextLugar = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         TexNacionalidad = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        Combo_edad = new javax.swing.JComboBox<>();
         jLabel30 = new javax.swing.JLabel();
         TexIdentidad = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         TexNombre = new javax.swing.JTextField();
+        Combo_edad = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -143,19 +227,19 @@ public class JfPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
-                        .addComponent(jButton1))
+                        .addGap(37, 37, 37)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(668, Short.MAX_VALUE))
+                        .addGap(140, 140, 140)
+                        .addComponent(jButton1)))
+                .addContainerGap(222, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(86, Short.MAX_VALUE)
+                .addGap(67, 67, 67)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(101, 101, 101))
         );
@@ -269,22 +353,21 @@ public class JfPrincipal extends javax.swing.JFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TextGanancias))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Combo_Jefe_trabajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TexClientes))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Combo_Jefe_trabajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TextGanancias)))
+                        .addComponent(TexClientes)))
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
@@ -342,10 +425,10 @@ public class JfPrincipal extends javax.swing.JFrame {
 
         TabFEJC.addTab("Clientes", jPanel7);
 
-        jButton3.setText("Agregar Persona");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        GuardarPersona.setText("Guardar");
+        GuardarPersona.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                GuardarPersonaMouseClicked(evt);
             }
         });
 
@@ -362,13 +445,13 @@ public class JfPrincipal extends javax.swing.JFrame {
 
         jLabel29.setText("Nacionalidad:");
 
-        Combo_edad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100" }));
-
         jLabel30.setText("Edad:");
 
         jLabel31.setText("N° de Identidad:");
 
         jLabel32.setText("Nombre:");
+
+        Combo_edad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -382,34 +465,40 @@ public class JfPrincipal extends javax.swing.JFrame {
                             .addComponent(jLabel29)
                             .addComponent(jLabel30)
                             .addComponent(jLabel31)
-                            .addComponent(jLabel32)))
+                            .addComponent(jLabel32))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Combo_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel27)
                             .addComponent(jLabel28))
-                        .addGap(5, 5, 5)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ColorB, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TexNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                            .addComponent(Combo_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TexIdentidad)
-                            .addComponent(TexNacionalidad)
-                            .addComponent(TextLugar)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(TexNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                                    .addComponent(TexIdentidad)
+                                    .addComponent(TexNacionalidad)
+                                    .addComponent(TextLugar)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ColorB, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(TabFEJC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(63, 63, 63))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addGap(468, 468, 468))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addComponent(GuardarPersona))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(jLabel8)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -417,41 +506,39 @@ public class JfPrincipal extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
-                    .addComponent(TexNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel31)
-                    .addComponent(TexIdentidad, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Combo_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel30))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel29)
-                    .addComponent(TexNacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28)
-                    .addComponent(TextLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
-                    .addComponent(ColorB, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TexNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(221, 221, 221)
-                        .addComponent(jButton3))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel31)
+                            .addComponent(TexIdentidad, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel30)
+                            .addComponent(Combo_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel29)
+                            .addComponent(TexNacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel28)
+                            .addComponent(TextLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TabFEJC)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel27)
+                            .addComponent(ColorB, javax.swing.GroupLayout.PREFERRED_SIZE, 21, Short.MAX_VALUE))
+                        .addGap(6, 6, 6)
+                        .addComponent(TabFEJC, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84)
+                        .addComponent(GuardarPersona)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         TabPrincipal.addTab("Personas", jPanel2);
@@ -460,7 +547,7 @@ public class JfPrincipal extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1077, Short.MAX_VALUE)
+            .addGap(0, 553, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -473,7 +560,7 @@ public class JfPrincipal extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1077, Short.MAX_VALUE)
+            .addGap(0, 553, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -528,7 +615,7 @@ public class JfPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TabPrincipal, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(TabPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -538,7 +625,7 @@ public class JfPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void GuardarPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuardarPersonaMouseClicked
         // TODO add your handling code here:
         //atributos persona
         int edad;
@@ -571,112 +658,106 @@ public class JfPrincipal extends javax.swing.JFrame {
         long dinero;
         //arraylis orden
 
-        try {
-            if (TabFEJC.getSelectedIndex() == 0) {
-                //familia
-                edad = Integer.parseInt((String) Combo_edad.getSelectedItem());
-                id = Long.parseLong(TexIdentidad.getText());
-                Nacionalidad = TexNacionalidad.getText();
-                Lugar_nacimiento = TextLugar.getText();
-                Nombre = TexNombre.getText();
-                color_piel = ColorB.getBackground();
-                Per = (Personas) ComboPadres.getSelectedItem();
-                Hijos.add(new Familiares(edad, id, Nacionalidad, Nacionalidad, Nombre, color_piel, Per, Hijos));
-//                Datos.add(new Familiares(edad, id, Nacionalidad, Lugar_nacimiento, Nombre, color_piel, a, Family));
-                JOptionPane.showMessageDialog(this, "Se agrego exitosamente a la Persona");
-                
-            } else if (TabFEJC.getSelectedIndex() == 1) {
-                //empleado
-                edad = Integer.parseInt((String) Combo_edad.getSelectedItem());
-                id = Long.parseLong(TexIdentidad.getText());
-                Nacionalidad = TexNacionalidad.getText();
-                Lugar_nacimiento = TextLugar.getText();
-                Nombre = TexNombre.getText();
-                color_piel = ColorB.getBackground();
-                seccion_trabajo = (String) ComboTrabajo.getSelectedItem();
-                hora_entrada = TexHora_Entrada.getText();
-                hora_salida = TexHora_Salida.getText();
-                sueldo = Long.parseLong(Text_Sueldo.getText());
-                estado = (String) Combo_Estado.getSelectedItem();
-                empleado.add(new Empleado(seccion_trabajo, hora_entrada, hora_salida, sueldo, estado, edad, id, Nacionalidad, Lugar_nacimiento, Nombre, color_piel));
-                JOptionPane.showMessageDialog(this, "Se agrego exitosamente a la Persona");
-
-            } else if (TabFEJC.getSelectedIndex() == 2) {
-                //jefes
-                edad = Integer.parseInt((String) Combo_edad.getSelectedItem());
-                id = Long.parseLong(TexIdentidad.getText());
-                Nacionalidad = TexNacionalidad.getText();
-                Lugar_nacimiento = TextLugar.getText();
-                Nombre = TexNombre.getText();
-                color_piel = ColorB.getBackground();
-                seccion_trabajoj = (String) Combo_Jefe_trabajo.getSelectedItem();
-                numero_empleadosAtendidos = Integer.parseInt(TexClientes.getText());
-                ganancias = Long.parseLong(TextGanancias.getText());
-                Jefe.add(new Jefes(seccion_trabajoj, empleado, numero_empleadosAtendidos, ganancias, edad, id, Nacionalidad, Lugar_nacimiento,
-                        Nombre, color_piel));
-                JOptionPane.showMessageDialog(this, "Se agrego exitosamente a la Persona");
-
-            } else if (TabFEJC.getSelectedIndex() == 3) {
-                // clientes
-                edad = Integer.parseInt((String) Combo_edad.getSelectedItem());
-                id = Long.parseLong(TexIdentidad.getText());
-                Nacionalidad = TexNacionalidad.getText();
-                Lugar_nacimiento = TextLugar.getText();
-                Nombre = TexNombre.getText();
-                color_piel = ColorB.getBackground();
-                Ticket = Integer.parseInt(TexTicket.getText());
-                dinero = Long.parseLong(TexDineroCliente.getText());
-                Datos.add(new Cliente(Ticket, dinero, orden, edad, id, Nacionalidad, Lugar_nacimiento, Nombre, Modelo1, color_piel, Hijos));
-                JOptionPane.showMessageDialog(this, "Se agrego exitosamente a la Persona");
-
-            } else {
-                //personas
-                edad = Integer.parseInt((String) Combo_edad.getSelectedItem());
-                id = Long.parseLong(TexIdentidad.getText());
-                Nacionalidad = TexNacionalidad.getText();
-                Lugar_nacimiento = TextLugar.getText();
-                Nombre = TexNombre.getText();
-                color_piel = ColorB.getBackground();
-                Datos.add(new Personas(edad, id, Nacionalidad, Lugar_nacimiento, Nombre, color_piel));
-                JOptionPane.showMessageDialog(this, "Se agrego exitosamente a la Persona");
-            }
-//Treeeee
-            DefaultMutableTreeNode Nodo = (DefaultMutableTreeNode) Modelo1.getRoot();
+        if (TabFEJC.getSelectedIndex() == 0) {
+            //familia
+            edad = Integer.parseInt((String) Combo_edad.getSelectedItem());
+            id = Long.parseLong(TexIdentidad.getText());
+            Nacionalidad = TexNacionalidad.getText();
+            Lugar_nacimiento = TextLugar.getText();
             Nombre = TexNombre.getText();
-            DefaultMutableTreeNode NodoFamilia;
-            NodoFamilia = new DefaultMutableTreeNode(new Personas(Integer.parseInt((String) Combo_edad.getSelectedItem()), Long.parseLong(TexIdentidad.getText()),
-                    TexNacionalidad.getText(), TextLugar.getText(), TexNombre.getText(), ColorB.getBackground()));
-            DefaultMutableTreeNode NFamilia;
-            NFamilia = new DefaultMutableTreeNode(TexNombre.getText());
-            Nodo.add(NodoFamilia);
-            NodoFamilia.add(NFamilia);
-            Modelo1.reload();
-            boolean condiciendo = true;
-            for (int i = 0; i < Nodo.getChildCount(); i++) {
-                if (Nodo.getChildAt(i).toString().equals(Nombre)) {
-                    DefaultMutableTreeNode P = new DefaultMutableTreeNode(new Personas(Integer.parseInt((String) Combo_edad.getSelectedItem()), Long.parseLong(TexIdentidad.getText()), TexNacionalidad.getText(), TextLugar.getText(), TexNombre.getText(), ColorB.getBackground()));
-                    condiciendo = false;
-                }
-            }
-            if (condiciendo) {
-                DefaultMutableTreeNode nom = new DefaultMutableTreeNode(Nombre);
-                DefaultMutableTreeNode p = new DefaultMutableTreeNode(new Personas(Integer.parseInt((String) Combo_edad.getSelectedItem()), Long.parseLong(TexIdentidad.getText()), TexNacionalidad.getText(), TextLugar.getText(), TexNombre.getText(), ColorB.getBackground()));
-                nom.add(p);
-                Nodo.add(nom);
-            }
+            color_piel = ColorB.getBackground();
+            Per = (Personas) ComboPadres.getSelectedItem();
+            Hijos.add(new Familiares(edad, id, Nacionalidad, Nacionalidad, Nombre, color_piel, Per, Hijos));
+//                Datos.add(new Familiares(edad, id, Nacionalidad, Lugar_nacimiento, Nombre, color_piel, a, Family));
+            JOptionPane.showMessageDialog(this, "Se agrego exitosamente al Hijo");
 
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Ocurrió un error y no se guardarón los datos\n" + e);
-            e.printStackTrace();
+        } else if (TabFEJC.getSelectedIndex() == 1) {
+            //empleado
+            edad = Integer.parseInt((String) Combo_edad.getSelectedItem());
+            id = Long.parseLong(TexIdentidad.getText());
+            Nacionalidad = TexNacionalidad.getText();
+            Lugar_nacimiento = TextLugar.getText();
+            Nombre = TexNombre.getText();
+            color_piel = ColorB.getBackground();
+            seccion_trabajo = (String) ComboTrabajo.getSelectedItem();
+            hora_entrada = TexHora_Entrada.getText();
+            hora_salida = TexHora_Salida.getText();
+            sueldo = Long.parseLong(Text_Sueldo.getText());
+            estado = (String) Combo_Estado.getSelectedItem();
+            empleado.add(new Empleado(seccion_trabajo, hora_entrada, hora_salida, sueldo, estado, edad, id, Nacionalidad, Lugar_nacimiento, Nombre, color_piel));
+            JOptionPane.showMessageDialog(this, "Se agrego exitosamente al Empleado");
+
+        } else if (TabFEJC.getSelectedIndex() == 2) {
+            //jefes
+            edad = Integer.parseInt((String) Combo_edad.getSelectedItem());
+            id = Long.parseLong(TexIdentidad.getText());
+            Nacionalidad = TexNacionalidad.getText();
+            Lugar_nacimiento = TextLugar.getText();
+            Nombre = TexNombre.getText();
+            color_piel = ColorB.getBackground();
+            seccion_trabajoj = (String) Combo_Jefe_trabajo.getSelectedItem();
+            numero_empleadosAtendidos = Integer.parseInt(TexClientes.getText());
+            ganancias = Long.parseLong(TextGanancias.getText());
+            Jefe.add(new Jefes(seccion_trabajoj, empleado, numero_empleadosAtendidos, ganancias, edad, id, Nacionalidad, Lugar_nacimiento,
+                    Nombre, color_piel));
+            JOptionPane.showMessageDialog(this, "Se agrego exitosamente al Jefe");
+
+        } else if (TabFEJC.getSelectedIndex() == 3) {
+            // clientes
+            edad = Integer.parseInt((String) Combo_edad.getSelectedItem());
+            id = Long.parseLong(TexIdentidad.getText());
+            Nacionalidad = TexNacionalidad.getText();
+            Lugar_nacimiento = TextLugar.getText();
+            Nombre = TexNombre.getText();
+            color_piel = ColorB.getBackground();
+            Ticket = Integer.parseInt(TexTicket.getText());
+            dinero = Long.parseLong(TexDineroCliente.getText());
+            Datos.add(new Cliente(Ticket, dinero, orden, edad, id, Nacionalidad, Lugar_nacimiento, Nombre, Modelo1, color_piel, Hijos));
+            JOptionPane.showMessageDialog(this, "Se agrego exitosamente al Cliente");
+
+        } else {
+            //personas
+            edad = Integer.parseInt((String) Combo_edad.getSelectedItem());
+            id = Long.parseLong(TexIdentidad.getText());
+            Nacionalidad = TexNacionalidad.getText();
+            Lugar_nacimiento = TextLugar.getText();
+            Nombre = TexNombre.getText();
+            color_piel = ColorB.getBackground();
+            Datos.add(new Personas(edad, id, Nacionalidad, Lugar_nacimiento, Nombre, color_piel));
+            JOptionPane.showMessageDialog(this, "Se agrego exitosamente al Padre");
+        }
+//Treeeee
+        DefaultMutableTreeNode Nodo = (DefaultMutableTreeNode) Modelo1.getRoot();
+        Nombre = TexNombre.getText();
+        DefaultMutableTreeNode NodoFamilia;
+        NodoFamilia = new DefaultMutableTreeNode(new Personas(Integer.parseInt((String) Combo_edad.getSelectedItem()), Long.parseLong(TexIdentidad.getText()),
+                TexNacionalidad.getText(), TextLugar.getText(), TexNombre.getText(), ColorB.getBackground()));
+        DefaultMutableTreeNode NFamilia;
+        NFamilia = new DefaultMutableTreeNode(TexNombre.getText());
+        Nodo.add(NodoFamilia);
+        NodoFamilia.add(NFamilia);
+        Modelo1.reload();
+        boolean condiciendo = true;
+        for (int i = 0; i < Nodo.getChildCount(); i++) {
+            if (Nodo.getChildAt(i).toString().equals(Nombre)) {
+                DefaultMutableTreeNode P = new DefaultMutableTreeNode(new Personas(Integer.parseInt((String) Combo_edad.getSelectedItem()), Long.parseLong(TexIdentidad.getText()), TexNacionalidad.getText(), TextLugar.getText(), TexNombre.getText(), ColorB.getBackground()));
+                condiciendo = false;
+            }
+        }
+        if (condiciendo) {
+            DefaultMutableTreeNode nom = new DefaultMutableTreeNode(Nombre);
+            DefaultMutableTreeNode p = new DefaultMutableTreeNode(new Personas(Integer.parseInt((String) Combo_edad.getSelectedItem()), Long.parseLong(TexIdentidad.getText()), TexNacionalidad.getText(), TextLugar.getText(), TexNombre.getText(), ColorB.getBackground()));
+            nom.add(p);
+            Nodo.add(nom);
         }
 
         TexNombre.setText("");
         TexIdentidad.setText("");
-        Combo_edad.setSelectedItem(0);
+        Combo_edad.setSelectedItem(15);
         TexNacionalidad.setText("");
         TextLugar.setText("");
         ColorB.setBackground(Color.WHITE);
-    }//GEN-LAST:event_jButton3MouseClicked
+    }//GEN-LAST:event_GuardarPersonaMouseClicked
 
     private void Salir_opcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salir_opcionActionPerformed
         // TODO add your handling code here:
@@ -697,7 +778,7 @@ public class JfPrincipal extends javax.swing.JFrame {
 
     private void TabPrincipalStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabPrincipalStateChanged
         // TODO add your handling code here:
-        if (this.TabPrincipal.getSelectedIndex() == 1) {
+        if (this.TabPrincipal.getSelectedIndex() == 0) {
             DefaultComboBoxModel Modelo = new DefaultComboBoxModel();
             for (Personas temp : Datos) {
                 Modelo.addElement(temp);
@@ -729,7 +810,7 @@ public class JfPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_GuardarComo_opcionActionPerformed
 
     private void ColorBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ColorBMouseClicked
-        // TODO add your handling code here:
+        ColorB.setBackground(JColorChooser.showDialog(this, "Seleccione color", Color.yellow));
     }//GEN-LAST:event_ColorBMouseClicked
     /**
      * @param args the command line arguments
@@ -742,11 +823,8 @@ public class JfPrincipal extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-
-                }
+                Plastic3DLookAndFeel.setPlasticTheme(new DarkStar());
+                UIManager.setLookAndFeel("com.jgoodies.looks.plastic.PlasticLookAndFeel");
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(JfPrincipal.class
@@ -770,6 +848,7 @@ public class JfPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new JfPrincipal().setVisible(true);
+
             }
         });
     }
@@ -785,6 +864,7 @@ public class JfPrincipal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Combo_Jefe_trabajo;
     private javax.swing.JComboBox<String> Combo_edad;
     private javax.swing.JMenuItem GuardarComo_opcion;
+    private javax.swing.JButton GuardarPersona;
     private javax.swing.JMenuItem Guardar_opcion;
     private javax.swing.JMenuItem Salir_opcion;
     private javax.swing.JTabbedPane TabFEJC;
@@ -802,7 +882,6 @@ public class JfPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField Text_Sueldo;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
