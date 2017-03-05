@@ -540,56 +540,142 @@ public class JfPrincipal extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
+        //atributos persona
         int edad;
         long id;
         String Nacionalidad;
         String Lugar_nacimiento;
         String Nombre;
         Color color_piel;
+        DefaultTreeModel Modelo1 = (DefaultTreeModel) Arbol_Familias.getModel();
+
+        //atributos familica
+        Personas Per = new Personas();
+        //arraylist familia
+
+        //atributos empleado
+        String seccion_trabajo;
+        String hora_entrada;
+        String hora_salida;
+        long sueldo;
+        String estado;
+
+        //atributos jefes
+        //arraylisempleados
+        String seccion_trabajoj;
+        int numero_empleadosAtendidos;
+        long ganancias;
+
+        //clientes
+        int Ticket;
+        long dinero;
+        //arraylis orden
+
         try {
-            edad = Integer.parseInt((String) Combo_edad.getSelectedItem());
-            id = Long.parseLong(TexIdentidad.getText());
-            Nacionalidad = TexNacionalidad.getText();
-            Lugar_nacimiento = TextLugar.getText();
+            if (TabFEJC.getSelectedIndex() == 0) {
+                //familia
+                edad = Integer.parseInt((String) Combo_edad.getSelectedItem());
+                id = Long.parseLong(TexIdentidad.getText());
+                Nacionalidad = TexNacionalidad.getText();
+                Lugar_nacimiento = TextLugar.getText();
+                Nombre = TexNombre.getText();
+                color_piel = ColorB.getBackground();
+                Per = (Personas) ComboPadres.getSelectedItem();
+                Hijos.add(new Familiares(edad, id, Nacionalidad, Nacionalidad, Nombre, color_piel, Per, Hijos));
+//                Datos.add(new Familiares(edad, id, Nacionalidad, Lugar_nacimiento, Nombre, color_piel, a, Family));
+                JOptionPane.showMessageDialog(this, "Se agrego exitosamente a la Persona");
+                
+            } else if (TabFEJC.getSelectedIndex() == 1) {
+                //empleado
+                edad = Integer.parseInt((String) Combo_edad.getSelectedItem());
+                id = Long.parseLong(TexIdentidad.getText());
+                Nacionalidad = TexNacionalidad.getText();
+                Lugar_nacimiento = TextLugar.getText();
+                Nombre = TexNombre.getText();
+                color_piel = ColorB.getBackground();
+                seccion_trabajo = (String) ComboTrabajo.getSelectedItem();
+                hora_entrada = TexHora_Entrada.getText();
+                hora_salida = TexHora_Salida.getText();
+                sueldo = Long.parseLong(Text_Sueldo.getText());
+                estado = (String) Combo_Estado.getSelectedItem();
+                empleado.add(new Empleado(seccion_trabajo, hora_entrada, hora_salida, sueldo, estado, edad, id, Nacionalidad, Lugar_nacimiento, Nombre, color_piel));
+                JOptionPane.showMessageDialog(this, "Se agrego exitosamente a la Persona");
+
+            } else if (TabFEJC.getSelectedIndex() == 2) {
+                //jefes
+                edad = Integer.parseInt((String) Combo_edad.getSelectedItem());
+                id = Long.parseLong(TexIdentidad.getText());
+                Nacionalidad = TexNacionalidad.getText();
+                Lugar_nacimiento = TextLugar.getText();
+                Nombre = TexNombre.getText();
+                color_piel = ColorB.getBackground();
+                seccion_trabajoj = (String) Combo_Jefe_trabajo.getSelectedItem();
+                numero_empleadosAtendidos = Integer.parseInt(TexClientes.getText());
+                ganancias = Long.parseLong(TextGanancias.getText());
+                Jefe.add(new Jefes(seccion_trabajoj, empleado, numero_empleadosAtendidos, ganancias, edad, id, Nacionalidad, Lugar_nacimiento,
+                        Nombre, color_piel));
+                JOptionPane.showMessageDialog(this, "Se agrego exitosamente a la Persona");
+
+            } else if (TabFEJC.getSelectedIndex() == 3) {
+                // clientes
+                edad = Integer.parseInt((String) Combo_edad.getSelectedItem());
+                id = Long.parseLong(TexIdentidad.getText());
+                Nacionalidad = TexNacionalidad.getText();
+                Lugar_nacimiento = TextLugar.getText();
+                Nombre = TexNombre.getText();
+                color_piel = ColorB.getBackground();
+                Ticket = Integer.parseInt(TexTicket.getText());
+                dinero = Long.parseLong(TexDineroCliente.getText());
+                Datos.add(new Cliente(Ticket, dinero, orden, edad, id, Nacionalidad, Lugar_nacimiento, Nombre, Modelo1, color_piel, Hijos));
+                JOptionPane.showMessageDialog(this, "Se agrego exitosamente a la Persona");
+
+            } else {
+                //personas
+                edad = Integer.parseInt((String) Combo_edad.getSelectedItem());
+                id = Long.parseLong(TexIdentidad.getText());
+                Nacionalidad = TexNacionalidad.getText();
+                Lugar_nacimiento = TextLugar.getText();
+                Nombre = TexNombre.getText();
+                color_piel = ColorB.getBackground();
+                Datos.add(new Personas(edad, id, Nacionalidad, Lugar_nacimiento, Nombre, color_piel));
+                JOptionPane.showMessageDialog(this, "Se agrego exitosamente a la Persona");
+            }
+//Treeeee
+            DefaultMutableTreeNode Nodo = (DefaultMutableTreeNode) Modelo1.getRoot();
             Nombre = TexNombre.getText();
-            color_piel = ColorB.getBackground();
-            Datos.add(new Personas(edad, id, Nacionalidad, Lugar_nacimiento, Nombre, color_piel));
-            JOptionPane.showMessageDialog(this, "Se agrego exitosamente a la persona");
+            DefaultMutableTreeNode NodoFamilia;
+            NodoFamilia = new DefaultMutableTreeNode(new Personas(Integer.parseInt((String) Combo_edad.getSelectedItem()), Long.parseLong(TexIdentidad.getText()),
+                    TexNacionalidad.getText(), TextLugar.getText(), TexNombre.getText(), ColorB.getBackground()));
+            DefaultMutableTreeNode NFamilia;
+            NFamilia = new DefaultMutableTreeNode(TexNombre.getText());
+            Nodo.add(NodoFamilia);
+            NodoFamilia.add(NFamilia);
+            Modelo1.reload();
+            boolean condiciendo = true;
+            for (int i = 0; i < Nodo.getChildCount(); i++) {
+                if (Nodo.getChildAt(i).toString().equals(Nombre)) {
+                    DefaultMutableTreeNode P = new DefaultMutableTreeNode(new Personas(Integer.parseInt((String) Combo_edad.getSelectedItem()), Long.parseLong(TexIdentidad.getText()), TexNacionalidad.getText(), TextLugar.getText(), TexNombre.getText(), ColorB.getBackground()));
+                    condiciendo = false;
+                }
+            }
+            if (condiciendo) {
+                DefaultMutableTreeNode nom = new DefaultMutableTreeNode(Nombre);
+                DefaultMutableTreeNode p = new DefaultMutableTreeNode(new Personas(Integer.parseInt((String) Combo_edad.getSelectedItem()), Long.parseLong(TexIdentidad.getText()), TexNacionalidad.getText(), TextLugar.getText(), TexNombre.getText(), ColorB.getBackground()));
+                nom.add(p);
+                Nodo.add(nom);
+            }
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Ocurrió un error y no se guardarón los datos\n" + e);
             e.printStackTrace();
         }
-        DefaultTreeModel Modelo1 = (DefaultTreeModel) Arbol_Familias.getModel();
-        DefaultMutableTreeNode Nodo = (DefaultMutableTreeNode) Modelo1.getRoot();
-        Nombre = TexNombre.getText();
-        DefaultMutableTreeNode NodoFamilia;
-        NodoFamilia = new DefaultMutableTreeNode(new Personas(Integer.parseInt((String) Combo_edad.getSelectedItem()), Long.parseLong(TexIdentidad.getText()),
-                TexNacionalidad.getText(), TextLugar.getText(), TexNombre.getText(), ColorB.getBackground()));
-        DefaultMutableTreeNode NFamilia;
-        NFamilia = new DefaultMutableTreeNode(TexNombre.getText());
-        Nodo.add(NodoFamilia);
-        NodoFamilia.add(NFamilia);
-        Modelo1.reload();
-        boolean condiciendo = true;
-        for (int i = 0; i < Nodo.getChildCount(); i++) {
-            if (Nodo.getChildAt(i).toString().equals(Nombre)) {
-                DefaultMutableTreeNode P = new DefaultMutableTreeNode(new Personas(Integer.parseInt((String) Combo_edad.getSelectedItem()), Long.parseLong(TexIdentidad.getText()), TexNacionalidad.getText(), TextLugar.getText(), TexNombre.getText(), ColorB.getBackground()));
-                condiciendo = false;
-            }
-        }
-        if (condiciendo) {
-            DefaultMutableTreeNode nom = new DefaultMutableTreeNode(Nombre);
-            DefaultMutableTreeNode p = new DefaultMutableTreeNode(new Personas(Integer.parseInt((String) Combo_edad.getSelectedItem()), Long.parseLong(TexIdentidad.getText()), TexNacionalidad.getText(), TextLugar.getText(), TexNombre.getText(), ColorB.getBackground()));
-            nom.add(p);
-            Nodo.add(nom);
-        }
+
         TexNombre.setText("");
         TexIdentidad.setText("");
         Combo_edad.setSelectedItem(0);
         TexNacionalidad.setText("");
         TextLugar.setText("");
-        ColorB.setBackground(Color.DARK_GRAY);
+        ColorB.setBackground(Color.WHITE);
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void Salir_opcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salir_opcionActionPerformed
@@ -752,5 +838,9 @@ public class JfPrincipal extends javax.swing.JFrame {
     private javax.swing.JTree jTree1;
     // End of variables declaration//GEN-END:variables
     ArrayList<Personas> Datos = new ArrayList();
+    ArrayList<Familiares> Hijos = new ArrayList();
+    ArrayList<Jefes> Jefe = new ArrayList();
+    ArrayList<Orden> orden = new ArrayList();
+    ArrayList<Empleado> empleado = new ArrayList();
 
 }

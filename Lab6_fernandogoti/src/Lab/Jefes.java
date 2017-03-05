@@ -1,6 +1,5 @@
 package Lab;
 
-
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.tree.DefaultTreeModel;
@@ -27,6 +26,13 @@ public class Jefes extends Personas {
 
     public Jefes(String seccion_trabajo, ArrayList<Empleado> empleado, int numero_empleadosAtendidos, long ganancias, int edad, long id, String Nacionalidad, String Lugar_nacimiento, String Nombre, DefaultTreeModel arbol_genealogico, Color color_piel, ArrayList<Familiares> familiares) {
         super(edad, id, Nacionalidad, Lugar_nacimiento, Nombre, arbol_genealogico, color_piel, familiares);
+        this.seccion_trabajo = seccion_trabajo;
+        this.empleado = empleado;
+        this.numero_empleadosAtendidos = numero_empleadosAtendidos;
+        this.ganancias = ganancias;
+    }
+
+    Jefes(String seccion_trabajoj, ArrayList<Empleado> empleado, int numero_empleadosAtendidos, long ganancias, int edad, long id, String Nacionalidad, String Lugar_nacimiento, String Nombre, Color color_piel) {
         this.seccion_trabajo = seccion_trabajo;
         this.empleado = empleado;
         this.numero_empleadosAtendidos = numero_empleadosAtendidos;

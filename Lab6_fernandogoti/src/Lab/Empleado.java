@@ -1,6 +1,5 @@
 package Lab;
 
-
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.tree.DefaultTreeModel;
@@ -28,6 +27,14 @@ public class Empleado extends Personas {
 
     public Empleado(String seccion_trabajo, String hora_entrada, String hora_salida, long sueldo, String estado, int edad, long id, String Nacionalidad, String Lugar_nacimiento, String Nombre, DefaultTreeModel arbol_genealogico, Color color_piel, ArrayList<Familiares> familiares) {
         super(edad, id, Nacionalidad, Lugar_nacimiento, Nombre, arbol_genealogico, color_piel, familiares);
+        this.seccion_trabajo = seccion_trabajo;
+        this.hora_entrada = hora_entrada;
+        this.hora_salida = hora_salida;
+        this.sueldo = sueldo;
+        this.estado = estado;
+    }
+
+    Empleado(String seccion_trabajo, String hora_entrada, String hora_salida, long sueldo, String estado, int edad, long id, String Nacionalidad, String Lugar_nacimiento, String Nombre, Color color_piel) {
         this.seccion_trabajo = seccion_trabajo;
         this.hora_entrada = hora_entrada;
         this.hora_salida = hora_salida;
