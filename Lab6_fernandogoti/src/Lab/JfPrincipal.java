@@ -1196,7 +1196,6 @@ public class JfPrincipal extends javax.swing.JFrame {
 
     private void Salir_opcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salir_opcionActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
     }//GEN-LAST:event_Salir_opcionActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
