@@ -1196,6 +1196,7 @@ public class JfPrincipal extends javax.swing.JFrame {
 
     private void Salir_opcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salir_opcionActionPerformed
         // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_Salir_opcionActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
@@ -1236,6 +1237,31 @@ public class JfPrincipal extends javax.swing.JFrame {
             File dir = fileChosser.getSelectedFile();
             boolean fuecreado = dir.mkdir();
             if (fuecreado) {
+                DefaultTreeModel Modelo = (DefaultTreeModel) Arbol_Familias.getModel();
+                DefaultMutableTreeNode Abuelo = (DefaultMutableTreeNode) Modelo.getRoot();
+                String Nombre;
+                Nombre = TexNombre.getText();
+                DefaultMutableTreeNode NodoFamilia;
+                NodoFamilia = new DefaultMutableTreeNode(new Personas(Integer.parseInt(TexEdad.getText()), Long.parseLong(TexIdentidad.getText()),
+                        TexNacionalidad.getText(), TextLugar.getText(), TexNombre.getText(), ColorB.getBackground()));
+                DefaultMutableTreeNode NFamilia;
+                NFamilia = new DefaultMutableTreeNode(TexNombre.getText());
+                Abuelo.add(NodoFamilia);
+                NodoFamilia.add(NFamilia);
+                Modelo.reload();
+                boolean condiciendo = true;
+                for (int i = 0; i < Abuelo.getChildCount(); i++) {
+                    if (Abuelo.getChildAt(i).toString().equals(Nombre)) {
+                        DefaultMutableTreeNode P = new DefaultMutableTreeNode(new Personas(Integer.parseInt(TexEdad.getText()), Long.parseLong(TexIdentidad.getText()), TexNacionalidad.getText(), TextLugar.getText(), TexNombre.getText(), ColorB.getBackground()));
+                        condiciendo = false;
+                    }
+                }
+                if (condiciendo) {
+                    DefaultMutableTreeNode nom = new DefaultMutableTreeNode(Nombre);
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(new Personas(Integer.parseInt(TexEdad.getText()), Long.parseLong(TexIdentidad.getText()), TexNacionalidad.getText(), TextLugar.getText(), TexNombre.getText(), ColorB.getBackground()));
+                    nom.add(p);
+                    Abuelo.add(nom);
+                }
                 JOptionPane.showMessageDialog(this, "Directorio creado exitosamente");
             } else {
                 JOptionPane.showMessageDialog(this, "El directorio no fue creado");
