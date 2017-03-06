@@ -1231,7 +1231,17 @@ public class JfPrincipal extends javax.swing.JFrame {
 
     private void GuardarComo_opcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarComo_opcionActionPerformed
         // TODO add your handling code here:
-
+        JFileChooser fileChosser = new JFileChooser();
+        int seleccion = fileChosser.showSaveDialog(this);
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            File dir = fileChosser.getSelectedFile();
+            boolean fuecreado = dir.mkdir();
+            if (fuecreado) {
+                JOptionPane.showMessageDialog(this, "Directorio creado exitosamente");
+            } else {
+                JOptionPane.showMessageDialog(this, "El directorio no fue creado");
+            }
+        }
     }//GEN-LAST:event_GuardarComo_opcionActionPerformed
 
     private void ColorBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ColorBMouseClicked
