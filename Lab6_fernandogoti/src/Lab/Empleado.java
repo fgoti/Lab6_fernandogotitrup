@@ -34,14 +34,6 @@ public class Empleado extends Personas {
         this.estado = estado;
     }
 
-    Empleado(String seccion_trabajo, String hora_entrada, String hora_salida, long sueldo, String estado, int edad, long id, String Nacionalidad, String Lugar_nacimiento, String Nombre, Color color_piel) {
-        this.seccion_trabajo = seccion_trabajo;
-        this.hora_entrada = hora_entrada;
-        this.hora_salida = hora_salida;
-        this.sueldo = sueldo;
-        this.estado = estado;
-    }
-
     public String getSeccion_trabajo() {
         return seccion_trabajo;
     }

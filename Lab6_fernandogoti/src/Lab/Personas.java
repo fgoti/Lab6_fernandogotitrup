@@ -17,6 +17,10 @@ import javax.swing.tree.DefaultTreeModel;
  */
 public class Personas {
 
+    static char[] getText() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     private int edad;
     private long id;
     private String Nacionalidad;

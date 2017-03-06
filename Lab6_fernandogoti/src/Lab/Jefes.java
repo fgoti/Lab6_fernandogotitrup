@@ -32,13 +32,6 @@ public class Jefes extends Personas {
         this.ganancias = ganancias;
     }
 
-    Jefes(String seccion_trabajoj, ArrayList<Empleado> empleado, int numero_empleadosAtendidos, long ganancias, int edad, long id, String Nacionalidad, String Lugar_nacimiento, String Nombre, Color color_piel) {
-        this.seccion_trabajo = seccion_trabajo;
-        this.empleado = empleado;
-        this.numero_empleadosAtendidos = numero_empleadosAtendidos;
-        this.ganancias = ganancias;
-    }
-
     public String getSeccion_trabajo() {
         return seccion_trabajo;
     }
